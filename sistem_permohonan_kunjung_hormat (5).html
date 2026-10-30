@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permohonan Kunjung Hormat - Pejabat TKP (Pembangunan)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-serif-title {
+      font-family: 'Merriweather', serif;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-amber-600 selection:text-white">
+
+  <!-- Header / Jata Rasmi Navbar -->
+  <header class="bg-gradient-to-r from-red-900 via-rose-950 to-slate-900 text-white shadow-xl border-b-4 border-amber-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-4 text-center sm:text-left">
+        <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur border border-amber-400/40 flex items-center justify-center p-2 shadow-inner">
+          <i class="fa-solid fa-building-columns text-amber-400 text-2xl"></i>
+        </div>
+        <div>
+          <span class="text-xs tracking-widest text-amber-400 uppercase font-bold block">Portal Rasmi Permohonan Temujanji</span>
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white leading-tight">Pejabat Timbalan Ketua Pengarah (Pembangunan)</h1>
+          <p class="text-xs sm:text-sm text-slate-300 font-medium">YAS Datuk Ts. Nazili bin Hj Mahmood</p>
+        </div>
+      </div>
+      
+      <!-- Nav Tabs -->
+      <div class="flex items-center space-x-2 bg-black/30 p-1.5 rounded-xl border border-white/10">
+        <button id="navFormBtn" onclick="switchTab('form')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-500 text-slate-950 shadow-md transition flex items-center gap-2">
+          <i class="fa-solid fa-file-pen"></i> Borang Awam
+        </button>
+        <button id="navAdminBtn" onclick="handleSupAccessClick()" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition flex items-center gap-2">
+          <i id="supLockIcon" class="fa-solid fa-lock text-amber-400"></i> Portal SUP
+          <span id="badgeCount" class="hidden ml-1 px-1.5 py-0.2 text-[10px] bg-red-600 text-white rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notice Banner -->
+  <div class="bg-amber-500/10 border-b border-amber-200 py-2 px-4 text-center text-xs sm:text-sm text-amber-900 font-medium flex items-center justify-center gap-2">
+    <i class="fa-solid fa-circle-info text-amber-600"></i>
+    <span>Semua permohonan kunjung hormat tertakluk kepada pengesahan dan kelapangan jadual rasmi YAS Datuk.</span>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <main class="flex-grow max-w-5xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+    <!-- ==================== VIEW 1: BORANG PERMOHONAN ==================== -->
+    <section id="formSection" class="transition-all duration-300">
+      
+      <!-- Kad Pengenalan Eksekutif -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8 mb-8 relative overflow-hidden">
+        <div class="absolute -right-8 -top-8 w-44 h-44 bg-rose-50 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
+          <div class="relative">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-tr from-amber-600 to-rose-700 p-1 shadow-lg">
+              <div class="w-full h-full rounded-xl bg-slate-900 flex items-center justify-center text-amber-300 text-3xl font-bold">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+            </div>
+            <span class="absolute -bottom-2 -right-2 bg-emerald-500 text-white p-1 rounded-full text-xs shadow-md" title="Jadual Aktif">
+              <i class="fa-solid fa-check-circle"></i>
+            </span>
+          </div>
+
+          <div class="text-center md:text-left flex-1">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 mb-2">
+              <i class="fa-solid fa-award"></i> Kunjungan Rasmi
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-serif-title leading-tight">
+              Kunjung Hormat ke Pejabat Timbalan Ketua Pengarah (Pembangunan)
+            </h2>
+            <p class="text-rose-900 font-bold text-base sm:text-lg mt-1">
+              YAS Datuk Ts. Nazili bin Hj Mahmood
+            </p>
+            <p class="text-slate-500 text-xs sm:text-sm mt-2 max-w-2xl">
+              Sila lengkapkan maklumat syarikat/organisasi serta sertakan surat rasmi permohonan. Permohonan anda akan disemak oleh Setiausaha Pejabat (SUP) untuk penyelarasan tarikh dan masa.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Borang Utama -->
+      <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
+        <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex items-center justify-between">
+          <h3 class="font-bold text-slate-800 text-base sm:text-lg flex items-center gap-2">
+            <i class="fa-solid fa-clipboard-list text-rose-700"></i> Maklumat Permohonan
+          </h3>
+          <span class="text-xs text-rose-600 font-medium">* Medan Wajib</span>
+        </div>
+
+        <form id="visitationForm" onsubmit="handleSubmitForm(event)" class="p-6 sm:p-8 space-y-6">
+          
+          <!-- 1. Nama Syarikat / Organisasi -->
+          <div>
+            <label for="companyName" class="block text-sm font-semibold text-slate-700 mb-1">
+              Nama Syarikat / Agensi / Organisasi <span class="text-rose-600">*</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+                <i class="fa-regular fa-building"></i>
+              </span>
+              <input type="text" id="companyName" name="companyName" required
+                placeholder="cth: Megah Pembangunan Sdn Bhd / Persatuan Kontraktor..."
+                class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm">
+            </div>
+          </div>
+
+          <!-- Grid: Nama Wakil & Jawatan -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="representativeName" class="block text-sm font-semibold text-slate-700 mb-1">
+                Nama Pegawai / Wakil Pemohon <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+                  <i class="fa-regular fa-user"></i>
+                </span>
+                <input type="text" id="representativeName" name="representativeName" required
+                  placeholder="cth: Ir. Ahmad bin Razali"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="representativeDesignation" class="block text-sm font-semibold text-slate-700 mb-1">
+                Jawatan Wakil Pemohon <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+                  <i class="fa-solid fa-briefcase"></i>
+                </span>
+                <input type="text" id="representativeDesignation" name="representativeDesignation" required
+                  placeholder="cth: Pengarah Urusan / Pengurus Projek"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm">
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid: No Phone & Email -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-slate-700 mb-1">
+                No. Telefon (Boleh Dihubungi / WhatsApp) <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <input type="tel" id="phone" name="phone" required
+                  placeholder="cth: 012-3456789 atau 03-88881234"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">
+                Emel Rasmi <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+                  <i class="fa-regular fa-envelope"></i>
+                </span>
+                <input type="email" id="email" name="email" required
+                  placeholder="cth: korporat@syarikat.com.my"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm">
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid: Cadangan Tarikh, Cadangan Pilihan & Bilangan Delegasi -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div>
+              <label for="proposedDate" class="block text-sm font-semibold text-slate-700 mb-1">
+                Cadangan Tarikh <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <input type="date" id="proposedDate" name="proposedDate" required
+                  class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm text-slate-700">
+              </div>
+            </div>
+
+            <div>
+              <label for="proposedTime" class="block text-sm font-semibold text-slate-700 mb-1">
+                Cadangan Masa <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+                  <i class="fa-regular fa-clock"></i>
+                </span>
+                <input type="time" id="proposedTime" name="proposedTime" required
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm text-slate-700">
+              </div>
+            </div>
+
+            <div>
+              <label for="delegateCount" class="block text-sm font-semibold text-slate-700 mb-1">
+                Bilangan Delegasi / Ahli <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+                  <i class="fa-solid fa-users"></i>
+                </span>
+                <input type="number" id="delegateCount" name="delegateCount" min="1" max="50" required
+                  placeholder="cth: 4"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm">
+              </div>
+            </div>
+          </div>
+
+          <!-- Tujuan / Objektif Kunjungan -->
+          <div>
+            <label for="purpose" class="block text-sm font-semibold text-slate-700 mb-1">
+              Ringkasan Tujuan / Agenda Kunjungan Hormat <span class="text-rose-600">*</span>
+            </label>
+            <textarea id="purpose" name="purpose" rows="3" required
+              placeholder="Sila nyatakan secara ringkas tujuan kunjungan hormat (cth: Perbincangan inisiatif teknologi keselamatan bangunan, pembentangan projek pembangunan terkini, jalinan strategik...)"
+              class="w-full p-4 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent transition text-sm bg-white shadow-sm"></textarea>
+          </div>
+
+          <!-- Surat Permohonan (Muat Naik Dokumen) -->
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">
+              Surat Permohonan Rasmi (PDF / DOC / Imbas) <span class="text-rose-600">*</span>
+            </label>
+            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-slate-300 border-dashed rounded-xl hover:border-rose-500 transition-colors bg-slate-50/50 cursor-pointer" onclick="document.getElementById('letterFile').click()">
+              <div class="space-y-2 text-center">
+                <div class="mx-auto h-12 w-12 text-slate-400 flex items-center justify-center rounded-full bg-slate-100">
+                  <i class="fa-solid fa-cloud-arrow-up text-2xl text-rose-700"></i>
+                </div>
+                <div class="flex text-sm text-slate-600 justify-center">
+                  <span class="font-medium text-rose-700 hover:text-rose-800 underline">
+                    Klik untuk pilih fail surat
+                  </span>
+                  <p class="pl-1 text-slate-500">atau tarik masuk ke sini</p>
+                </div>
+                <p class="text-xs text-slate-500">
+                  PDF, DOCX atau JPG/PNG (Maksimum 5MB)
+                </p>
+                <!-- File name preview -->
+                <div id="fileInfoBox" class="hidden mt-2 p-2 bg-rose-50 border border-rose-200 rounded-lg text-xs font-semibold text-rose-900 inline-flex items-center gap-2">
+                  <i class="fa-regular fa-file-pdf text-rose-600"></i>
+                  <span id="fileNameText">Surat_Permohonan.pdf</span>
+                  <span id="fileSizeText" class="text-slate-400 font-normal"></span>
+                </div>
+              </div>
+              <input id="letterFile" name="letterFile" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required class="sr-only" onchange="handleFileSelected(this)">
+            </div>
+            <p class="text-xs text-slate-500 mt-1">
+              <i class="fa-solid fa-circle-exclamation text-amber-500 mr-1"></i> Sila pastikan surat rasmi ditandatangani oleh Pengurusan Tertinggi syarikat anda dan ditujukan kepada YAS Datuk.
+            </p>
+          </div>
+
+          <!-- Pengakuan Pemohon -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-start space-x-3">
+            <input type="checkbox" id="declaration" required class="mt-1 h-4 w-4 rounded border-slate-300 text-rose-600 focus:ring-rose-500">
+            <label for="declaration" class="text-xs text-slate-600 leading-relaxed cursor-pointer">
+              Saya mengesahkan bahawa segala maklumat yang dikemukakan adalah benar, sah dan surat permohonan yang dilampirkan mewakili hasrat rasmi pihak syarikat/organisasi kami.
+            </label>
+          </div>
+
+          <!-- Butang Submit -->
+          <div class="pt-2">
+            <button type="submit" id="submitBtn" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-red-800 to-rose-700 hover:from-red-900 hover:to-rose-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-3 text-base">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Hantar Permohonan Kunjung Hormat</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: PORTAL SETIAUSAHA PEJABAT (ADMIN) ==================== -->
+    <section id="adminSection" class="hidden transition-all duration-300">
+      
+      <!-- Top Action Bar -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800">Panel Kawalan</span>
+            <span class="text-xs text-slate-400">|</span>
+            <span class="text-xs text-slate-500">Log Masuk: Setiausaha Pejabat (SUP)</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 mt-1">Senarai Permohonan Masuk</h2>
+          <p class="text-xs text-slate-500">Semak permohonan, kemaskini status dan hantar data ke Google Sheets.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+          <!-- Tukar Password Button -->
+          <button onclick="openChangePasswordModal()" class="flex-1 md:flex-none px-3.5 py-2 text-xs font-semibold rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center justify-center gap-1.5 border border-slate-300">
+            <i class="fa-solid fa-key text-slate-600"></i> Tukar Password
+          </button>
+          <!-- Setup Modal Button -->
+          <button onclick="openSetupModal()" class="flex-1 md:flex-none px-3.5 py-2 text-xs font-semibold rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center justify-center gap-1.5 border border-slate-300">
+            <i class="fa-solid fa-gear text-slate-600"></i> Setup Google Excel
+          </button>
+          <!-- Sync to Google Sheets Button -->
+          <button onclick="syncAllToGoogleSheets()" class="flex-1 md:flex-none px-3.5 py-2 text-xs font-semibold rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition flex items-center justify-center gap-1.5 shadow-sm" title="Hantar semua data ke Google Sheet">
+            <i class="fa-solid fa-rotate"></i> Sync ke Google Excel
+          </button>
+          <!-- Export CSV -->
+          <button onclick="exportToCSV()" class="flex-1 md:flex-none px-3.5 py-2 text-xs font-semibold rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white transition flex items-center justify-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-file-excel"></i> Muat Turun CSV
+          </button>
+          <!-- Logout Button -->
+          <button onclick="lockSupPortal()" class="flex-1 md:flex-none px-3.5 py-2 text-xs font-semibold rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 transition flex items-center justify-center gap-1.5" title="Kunci & Keluar">
+            <i class="fa-solid fa-right-from-bracket"></i> Keluar
+          </button>
+        </div>
+      </div>
+
+      <!-- Status Sambungan Google Sheets Alert -->
+      <div id="sheetsStatusBanner" class="mb-5 p-3 rounded-xl border flex items-center justify-between text-xs transition-all bg-amber-50 border-amber-200 text-amber-900">
+        <div class="flex items-center gap-2">
+          <i id="sheetsStatusIcon" class="fa-solid fa-triangle-exclamation text-amber-600 text-sm"></i>
+          <span id="sheetsStatusText">URL Google Apps Script belum dimasukkan. Sila klik <strong>"Setup Google Excel"</strong> supaya data kekal masuk ke spreadsheet anda secara automatik.</span>
+        </div>
+        <button onclick="openSetupModal()" class="px-2.5 py-1 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 text-[11px] whitespace-nowrap ml-2">
+          Setup Sekarang
+        </button>
+      </div>
+
+      <!-- Quick Stats Card -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+          <div>
+            <p class="text-xs text-slate-500 font-medium">Jumlah Permohonan</p>
+            <p id="statTotal" class="text-2xl font-bold text-slate-800">0</p>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+            <i class="fa-solid fa-inbox text-lg"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-amber-200 bg-amber-50/30 shadow-sm flex items-center justify-between">
+          <div>
+            <p class="text-xs text-amber-700 font-medium">Perlu Disemak</p>
+            <p id="statPending" class="text-2xl font-bold text-amber-600">0</p>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700">
+            <i class="fa-solid fa-clock text-lg"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-emerald-200 bg-emerald-50/30 shadow-sm flex items-center justify-between">
+          <div>
+            <p class="text-xs text-emerald-700 font-medium">Disahkan / Lulus</p>
+            <p id="statApproved" class="text-2xl font-bold text-emerald-600">0</p>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700">
+            <i class="fa-solid fa-circle-check text-lg"></i>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-rose-200 bg-rose-50/30 shadow-sm flex items-center justify-between">
+          <div>
+            <p class="text-xs text-rose-700 font-medium">Ditolak / Dipinda</p>
+            <p id="statRejected" class="text-2xl font-bold text-rose-600">0</p>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center text-rose-700">
+            <i class="fa-solid fa-circle-xmark text-lg"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter & Search Bar -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 mb-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
+        <div class="relative w-full sm:w-72">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+          </span>
+          <input type="text" id="searchInput" oninput="filterTable()" placeholder="Cari syarikat, wakil, telefon..." class="w-full pl-9 pr-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-rose-500">
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <label class="text-xs font-semibold text-slate-600 whitespace-nowrap">Tapis Status:</label>
+          <select id="statusFilter" onchange="filterTable()" class="text-xs py-2 px-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-rose-500 bg-white">
+            <option value="ALL">Semua Status</option>
+            <option value="Baharu">Baharu</option>
+            <option value="Dalam Tindakan">Dalam Tindakan</option>
+            <option value="Lulus">Lulus / Disahkan</option>
+            <option value="Ditolak">Ditolak</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Jadual Permohonan (Responsive Table) -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-100/80 text-slate-700 uppercase font-semibold border-b border-slate-200 tracking-wider">
+                <th class="py-3 px-4">Tarikh Mohon</th>
+                <th class="py-3 px-4">Nama Syarikat & Wakil</th>
+                <th class="py-3 px-4">Hubungi (Tel & Emel)</th>
+                <th class="py-3 px-4">Cadangan Tarikh</th>
+                <th class="py-3 px-4">Surat / Dokumen</th>
+                <th class="py-3 px-4">Status SUP</th>
+                <th class="py-3 px-4 text-center">Tindakan</th>
+              </tr>
+            </thead>
+            <tbody id="applicationTableBody" class="divide-y divide-slate-200 font-medium">
+              <!-- Baris akan dijana secara dinamik oleh JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty state placeholder -->
+        <div id="emptyTableState" class="hidden py-12 text-center">
+          <div class="w-16 h-16 mx-auto bg-slate-100 rounded-full flex items-center justify-center text-slate-400 mb-3">
+            <i class="fa-solid fa-folder-open text-2xl"></i>
+          </div>
+          <p class="text-slate-600 font-semibold text-sm">Tiada Permohonan Dijumpai</p>
+          <p class="text-slate-400 text-xs">Belum ada sebarang permohonan kunjung hormat dihantar.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+      <p class="text-slate-300 font-medium">Pejabat Timbalan Ketua Pengarah (Pembangunan) | YAS Datuk Ts. Nazili bin Hj Mahmood</p>
+      <p>© Sistem Maklumat Temujanji & Kunjung Hormat Rasmi. Semua Maklumat Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL: KATA LALUAN SUP LOGIN ==================== -->
+  <div id="passwordModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-200">
+      <div class="w-14 h-14 mx-auto bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center text-2xl mb-3 shadow-inner">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h3 class="text-base font-bold text-slate-900">Akses Khas Setiausaha Pejabat</h3>
+      <p class="text-xs text-slate-500 mt-1">Sila masukkan kata laluan keselamatan untuk membuka portal semakan.</p>
+
+      <form onsubmit="handlePasswordSubmit(event)" class="mt-4 space-y-3">
+        <div class="relative">
+          <input type="password" id="supPasswordInput" required placeholder="Masukkan kata laluan..."
+            class="w-full pl-4 pr-10 py-2.5 text-center tracking-widest text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:border-transparent font-mono">
+          <button type="button" onclick="togglePasswordVisibility('supPasswordInput', this)" class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+        <p id="passwordErrorMsg" class="hidden text-[11px] text-rose-600 font-semibold"></p>
+        
+        <!--div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-[10px] text-slate-500 text-left">
+          <i class="fa-solid fa-circle-info text-amber-500 mr-1"></i> Kata laluan lalai sistem: <strong class="text-slate-700 font-mono">Pejabat@TKPP</strong>
+        </div-->
+
+        <div class="flex gap-2 pt-1">
+          <button type="button" onclick="closePasswordModal()" class="w-1/2 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition">
+            Batal
+          </button>
+          <button type="submit" class="w-1/2 py-2.5 bg-rose-800 hover:bg-rose-900 text-white rounded-xl text-xs font-semibold shadow-md transition">
+            Log Masuk
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: TUKAR KATA LALUAN SUP ==================== -->
+  <div id="changePasswordModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-200">
+      <div class="w-12 h-12 mx-auto bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl mb-3">
+        <i class="fa-solid fa-key"></i>
+      </div>
+      <h3 class="text-base font-bold text-slate-900">Tukar Kata Laluan SUP</h3>
+      <p class="text-xs text-slate-500 mt-1">Tetapkan kata laluan baharu untuk melindungi rekod pejabat.</p>
+
+      <form onsubmit="handleChangePasswordSubmit(event)" class="mt-4 space-y-3 text-left">
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-700 mb-1">Kata Laluan Semasa:</label>
+          <input type="password" id="currentPasswordInput" required
+            class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 font-mono">
+        </div>
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-700 mb-1">Kata Laluan Baharu:</label>
+          <input type="password" id="newPasswordInput" required minlength="4"
+            class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-600 font-mono">
+        </div>
+        <p id="changePassErrorMsg" class="hidden text-[11px] text-rose-600 font-semibold"></p>
+
+        <div class="flex gap-2 pt-2">
+          <button type="button" onclick="closeChangePasswordModal()" class="w-1/2 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition">
+            Batal
+          </button>
+          <button type="submit" class="w-1/2 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold shadow-md transition">
+            Simpan
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: SUCCESS SUBMISSION NOTIFICATION ==================== -->
+  <div id="successModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-2xl border border-slate-200 transform transition-all">
+      <div class="w-16 h-16 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mb-4">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 class="text-lg font-bold text-slate-900">Permohonan Berjaya Dihantar!</h3>
+      <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+        Terima kasih. Permohonan kunjung hormat pihak syarikat anda telah direkodkan dan disalurkan ke <strong>Google Sheets Pejabat Timbalan Ketua Pengarah (Pembangunan)</strong> untuk semakan Setiausaha Pejabat.
+      </p>
+      
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 my-4 text-left text-xs space-y-1">
+        <p><strong class="text-slate-700">No. Rujukan:</strong> <span id="modalRefNo" class="font-mono text-rose-700 font-bold">KH-2026-0001</span></p>
+        <p><strong class="text-slate-700">Syarikat:</strong> <span id="modalCompany">-</span></p>
+        <p><strong class="text-slate-700">Tarikh & Masa:</strong> <span id="modalDate">-</span></p>
+      </div>
+
+      <p class="text-[11px] text-slate-400">Pegawai SUP akan menghubungi no. telefon atau menghantar e-mail dalam tempoh 3-5 hari bekerja bagi pengesahan.</p>
+      
+      <div class="mt-5 flex gap-2">
+        <button onclick="closeSuccessModal()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold transition">
+          Tutup & Hantar Permohonan Lain
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: BUTIRAN PERMOHONAN (DETAIL MODAL) ==================== -->
+  <div id="detailModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+        <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
+          <i class="fa-solid fa-file-lines text-rose-700"></i> Butiran Lengkap Permohonan
+        </h4>
+        <button onclick="closeDetailModal()" class="text-slate-400 hover:text-slate-600">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div id="detailModalContent" class="py-4 text-xs space-y-3">
+        <!-- Content will be injected dynamically -->
+      </div>
+
+      <div class="pt-3 border-t border-slate-200 flex justify-end gap-2">
+        <button onclick="closeDetailModal()" class="px-4 py-2 bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold hover:bg-slate-300">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: PENGESAHAN PADAM PERMOHONAN ==================== -->
+  <div id="deleteConfirmModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-200">
+      <div class="w-14 h-14 mx-auto bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-2xl mb-3">
+        <i class="fa-solid fa-trash-can"></i>
+      </div>
+      <h3 class="text-base font-bold text-slate-900">Padam Permohonan Ini?</h3>
+      <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+        Adakah anda pasti ingin memadam rekod permohonan <strong id="deleteTargetRef" class="text-rose-700 font-mono">-</strong> bagi syarikat <span id="deleteTargetCompany" class="font-semibold text-slate-700">-</span>? Tindakan ini tidak boleh diundur.
+      </p>
+
+      <div class="flex gap-2 pt-4">
+        <button type="button" onclick="closeDeleteConfirmModal()" class="w-1/2 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition">
+          Batal
+        </button>
+        <button type="button" onclick="confirmDeleteApplication()" class="w-1/2 py-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-semibold shadow-md transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-trash-can"></i> Ya, Padam
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: GOOGLE EXCEL (SHEETS) SETUP GUIDE ==================== -->
+  <div id="setupModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+            <i class="fa-solid fa-file-excel"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-sm sm:text-base">Konfigurasi Sambungan Google Sheets</h4>
+            <p class="text-[11px] text-slate-500">Panduan untuk Setiausaha Pejabat (SUP) mengaktifkan Google Excel automatik.</p>
+          </div>
+        </div>
+        <button onclick="closeSetupModal()" class="text-slate-400 hover:text-slate-600">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="py-4 space-y-4 text-xs text-slate-700">
+        <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-xl flex items-start gap-2">
+          <i class="fa-solid fa-lightbulb text-emerald-600 mt-0.5"></i>
+          <div>
+            <strong class="text-emerald-900">Bagaimana ia berfungsi?</strong>
+            <p class="text-emerald-800 text-[11px] mt-0.5">
+              Setiap kali orang awam atau kontraktor isi borang di web ini, maklumat akan dihantar serta-merta ke fail Google Sheets (Excel) milik pejabat melalui Google Apps Script Webhook.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-800 mb-1">
+            Google Web App Script URL Anda:
+          </label>
+          <div class="flex gap-2">
+            <input type="url" id="scriptUrlInput" placeholder="https://script.google.com/macros/s/.../exec"
+              class="w-full p-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-mono">
+            <button onclick="saveScriptUrl()" class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl whitespace-nowrap">
+              Simpan URL
+            </button>
+          </div>
+          <p id="urlStatusText" class="text-[11px] text-slate-500 mt-1 italic">
+            *URL ini disimpan dalam sistem pelayar anda untuk penghantaran terus.
+          </p>
+        </div>
+
+        <!-- Langkah-langkah -->
+        <div class="space-y-2.5 pt-2">
+          <h5 class="font-bold text-slate-900 flex items-center gap-1.5">
+            <i class="fa-solid fa-list-ol text-rose-700"></i> Langkah Setup Simpan PDF ke Google Drive & Sheets:
+          </h5>
+
+          <ol class="list-decimal list-inside space-y-1.5 text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <li>Buka <strong>Google Sheets</strong> pejabat anda.</li>
+            <li>Di menu atas, klik <strong>Extensions</strong> &rarr; <strong>Apps Script</strong>.</li>
+            <li>Gantikan kod lama dengan kod baharu di bawah (ia akan automatik simpan PDF ke Google Drive dan jana link di Sheets):</li>
+          </ol>
+
+          <!-- Kod Google Apps Script -->
+          <div class="relative mt-2">
+            <pre class="bg-slate-900 text-emerald-400 p-3 rounded-xl text-[10px] overflow-x-auto font-mono max-h-56 leading-relaxed">
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    
+    // 1. Simpan dokumen PDF ke Google Drive pejabat secara automatik
+    var fileUrl = "-";
+    var hyperlinkFormula = "-";
+    
+    if (data.fileBase64 && data.fileName) {
+      var folderName = "Surat Permohonan Kunjung Hormat TKP";
+      var folders = DriveApp.getFoldersByName(folderName);
+      var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(folderName);
+      
+      var decoded = Utilities.base64Decode(data.fileBase64);
+      var blob = Utilities.newBlob(decoded, data.fileType || "application/pdf", data.fileName);
+      var file = folder.createFile(blob);
+      
+      // Berikan akses bacaan kepada sesiapa yang ada link
+      file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+      fileUrl = file.getUrl();
+      hyperlinkFormula = '=HYPERLINK("' + fileUrl + '", "📄 Buka Surat PDF")';
+    }
+    
+    // 2. Jika baris pertama kosong, tambah tajuk lajur
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        "Timestamp", "No Rujukan", "Nama Syarikat", 
+        "Nama Wakil", "Jawatan Wakil", "No Telefon", 
+        "Emel", "Cadangan Tarikh", "Cadangan Masa", 
+        "Bil Delegasi", "Tujuan Kunjungan", "Nama Fail Surat", "Pautan Google Drive (Surat)", "Status"
+      ]);
+    }
+    
+    // 3. Tambah data permohonan baharu bersama Link Google Drive
+    sheet.appendRow([
+      new Date().toLocaleString("ms-MY"),
+      data.referenceNo,
+      data.companyName,
+      data.representativeName,
+      data.representativeDesignation,
+      data.phone,
+      data.email,
+      data.proposedDate,
+      data.proposedTime,
+      data.delegateCount,
+      data.purpose,
+      data.fileName,
+      hyperlinkFormula !== "-" ? hyperlinkFormula : fileUrl,
+      "Baharu"
+    ]);
+    
+    return ContentService.createTextOutput(JSON.stringify({status: "success", fileUrl: fileUrl}))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({status: "error", message: err.toString()}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}</pre>
+            <button onclick="copyScriptCode()" class="absolute top-2 right-2 px-2.5 py-1 bg-white/20 hover:bg-white/30 text-white rounded text-[10px] font-mono flex items-center gap-1 backdrop-blur">
+              <i class="fa-regular fa-copy"></i> Salin Kod Baru
+            </button>
+          </div>
+
+          <ol start="4" class="list-decimal list-inside space-y-1.5 text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <li>Klik <strong>Deploy</strong> (kanan atas) &rarr; <strong>Manage Deployments</strong> &rarr; Edit (ikon pensel) &rarr; Pilih Version <strong>New version</strong> &rarr; Klik <strong>Deploy</strong>.</li>
+            <li>Kini apabila pemohon menghantar borang, fail PDF akan masuk ke folder <strong>Google Drive</strong> dan lajur ke-13 di Google Sheet akan bertukar menjadi butang pautan biru <strong>"📄 Buka Surat PDF"</strong>!</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <div class="pt-3 border-t border-slate-200 flex justify-end">
+        <button onclick="closeSetupModal()" class="px-5 py-2 bg-slate-800 text-white rounded-xl text-xs font-semibold hover:bg-slate-900">
+          Selesai & Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Alert Toast Message -->
+  <div id="toastMessage" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-700 text-xs">
+      <span id="toastIcon" class="text-amber-400 text-base"><i class="fa-solid fa-circle-check"></i></span>
+      <span id="toastText">Mesej berjaya</span>
+    </div>
+  </div>
+
+  <!-- Firebase Cloud Storage & Realtime Database Integration -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'kunjung-hormat-tkp';
+    const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+    let db = null;
+    let auth = null;
+    let currentUser = null;
+
+    if (firebaseConfig) {
+      try {
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        auth = getAuth(app);
+
+        // Sign in first
+        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+          await signInWithCustomToken(auth, __initial_auth_token);
+        } else {
+          await signInAnonymously(auth);
+        }
+        currentUser = auth.currentUser;
+
+        if (currentUser && db) {
+          // Listen to submissions in cloud in realtime
+          const publicCollection = collection(db, 'artifacts', appId, 'public', 'data', 'applications');
+          onSnapshot(publicCollection, (snapshot) => {
+            const cloudItems = [];
+            snapshot.forEach((docSnap) => {
+              cloudItems.push({
+                firestoreId: docSnap.id,
+                ...docSnap.data()
+              });
+            });
+
+            // Sort in memory by timestamp or id descending
+            cloudItems.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+
+            // Expose to window applications
+            window.applications = cloudItems;
+            if (typeof window.renderTable === 'function') {
+              window.renderTable(window.applications);
+              window.updateStats();
+            }
+          }, (error) => {
+            console.warn("Cloud snapshot notice:", error);
+          });
+        }
+      } catch (err) {
+        console.warn("Firebase init notice:", err);
+      }
+    }
+
+    // Expose helpers to global scope
+    window.saveApplicationToCloud = async function(data) {
+      if (!db || !auth || !auth.currentUser) return null;
+      try {
+        const publicCollection = collection(db, 'artifacts', appId, 'public', 'data', 'applications');
+        const docRef = await addDoc(publicCollection, {
+          ...data,
+          createdAt: Date.now()
+        });
+        return docRef.id;
+      } catch (err) {
+        console.warn("Error saving to cloud:", err);
+        return null;
+      }
+    };
+
+    window.updateApplicationStatusInCloud = async function(firestoreId, newStatus) {
+      if (!db || !auth || !auth.currentUser || !firestoreId) return;
+      try {
+        const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'applications', firestoreId);
+        await updateDoc(docRef, { status: newStatus });
+      } catch (err) {
+        console.warn("Error updating status in cloud:", err);
+      }
+    };
+
+    window.deleteApplicationFromCloud = async function(firestoreId) {
+      if (!db || !auth || !auth.currentUser || !firestoreId) return;
+      try {
+        const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'applications', firestoreId);
+        await deleteDoc(docRef);
+      } catch (err) {
+        console.warn("Error deleting document from cloud:", err);
+      }
+    };
+  </script>
+
+  <!-- JavaScript Logic -->
+  <script>
+    // Storage Key untuk simpanan kekal
+    const LOCAL_STORE_KEY = "tkp_kunjung_hormat_records_v1";
+    const SCRIPT_URL_KEY = "tkp_google_script_url_v1";
+    const PASS_STORE_KEY = "tkp_sup_pass_v1";
+
+    // Contoh data awal sekiranya peranti baru pertama kali dibuka
+    const initialDefaultData = [
+      {
+        id: "KH-2026-0001",
+        timestamp: "28/10/2026, 10:15 AM",
+        companyName: "Wawasan Kejuruteraan & Bina Sdn Bhd",
+        representativeName: "Ir. Ts. Kamarul Azman",
+        representativeDesignation: "Pengarah Urusan",
+        phone: "013-9876543",
+        email: "kamarul@wawasanbina.com.my",
+        proposedDate: "2026-11-15",
+        proposedTime: "10:30",
+        delegateCount: "4",
+        purpose: "Membincangkan cadangan penerapan sistem keselamatan kebakaran pintar dan inovasi terkini bagi projek hab logistik zon perindustrian.",
+        fileName: "Surat_Permohonan_WawasanKejuruteraan.pdf",
+        fileDataUrl: null,
+        fileDriveUrl: "",
+        status: "Dalam Tindakan"
+      }
+    ];
+
+    // Load data kekal dari storan tempatan
+    function loadSavedRecords() {
+      try {
+        const saved = localStorage.getItem(LOCAL_STORE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            return parsed;
+          }
+        }
+      } catch (e) {
+        console.warn("Storage read error", e);
+      }
+      return initialDefaultData;
+    }
+
+    // Simpan senarai terkini ke storan supaya bila tutup browser data kekal
+    function persistRecords(data) {
+      try {
+        localStorage.setItem(LOCAL_STORE_KEY, JSON.stringify(data));
+      } catch (e) {
+        console.warn("Storage write error", e);
+      }
+    }
+
+    window.applications = loadSavedRecords();
+
+    let configuredGoogleScriptUrl = "";
+    let isSupAuthenticated = false;
+    let currentSupPassword = "Pejabat@TKPP"; 
+    let selectedFileBase64 = null;
+    let selectedFileType = "";
+    let itemToDeleteId = null;
+
+    // Inisialisasi semasa halaman dimuatkan
+    window.onload = function () {
+      // Set had minimum tarikh ke hari ini
+      const today = new Date().toISOString().split('T')[0];
+      const dateElem = document.getElementById('proposedDate');
+      if (dateElem) dateElem.min = today;
+
+      // Muat turun password tersimpan jika ada
+      const savedPass = localStorage.getItem(PASS_STORE_KEY);
+      if (savedPass) {
+        currentSupPassword = savedPass;
+      }
+
+      // Load URL Google Sheets yang pernah disimpan
+      const savedUrl = localStorage.getItem(SCRIPT_URL_KEY) || window.__googleSheetUrl || "";
+      if (savedUrl) {
+        configuredGoogleScriptUrl = savedUrl;
+        const scriptInput = document.getElementById('scriptUrlInput');
+        if (scriptInput) scriptInput.value = savedUrl;
+        updateConnectionBanner(true);
+      } else {
+        updateConnectionBanner(false);
+      }
+
+      renderTable();
+      updateStats();
+    };
+
+    function updateConnectionBanner(isConnected) {
+      const banner = document.getElementById('sheetsStatusBanner');
+      const icon = document.getElementById('sheetsStatusIcon');
+      const text = document.getElementById('sheetsStatusText');
+      if (!banner) return;
+
+      if (isConnected) {
+        banner.className = "mb-5 p-3 rounded-xl border flex items-center justify-between text-xs transition-all bg-emerald-50 border-emerald-200 text-emerald-900";
+        icon.className = "fa-solid fa-circle-check text-emerald-600 text-sm";
+        text.innerHTML = `Google Excel telah disambungkan: <strong class="font-mono text-emerald-800">${configuredGoogleScriptUrl.substring(0, 45)}...</strong> (Permohonan akan dihantar terus ke Google Sheets).`;
+      } else {
+        banner.className = "mb-5 p-3 rounded-xl border flex items-center justify-between text-xs transition-all bg-amber-50 border-amber-200 text-amber-900";
+        icon.className = "fa-solid fa-triangle-exclamation text-amber-600 text-sm";
+        text.innerHTML = `URL Google Apps Script belum dimasukkan. Sila klik <strong>"Setup Google Excel"</strong> supaya data terus masuk ke spreadsheet anda secara automatik.`;
+      }
+    }
+
+    // SUP Access Control Handler
+    function handleSupAccessClick() {
+      if (isSupAuthenticated) {
+        switchTab('admin');
+      } else {
+        openPasswordModal();
+      }
+    }
+
+    function openPasswordModal() {
+      const modal = document.getElementById('passwordModal');
+      const input = document.getElementById('supPasswordInput');
+      const errorMsg = document.getElementById('passwordErrorMsg');
+      errorMsg.classList.add('hidden');
+      input.value = "";
+      modal.classList.remove('hidden');
+      setTimeout(() => input.focus(), 100);
+    }
+
+    function closePasswordModal() {
+      document.getElementById('passwordModal').classList.add('hidden');
+    }
+
+    function handlePasswordSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('supPasswordInput');
+      const errorMsg = document.getElementById('passwordErrorMsg');
+
+      if (input.value === currentSupPassword) {
+        isSupAuthenticated = true;
+        closePasswordModal();
+        const icon = document.getElementById('supLockIcon');
+        if (icon) {
+          icon.className = "fa-solid fa-lock-open text-emerald-400";
+        }
+        showToast("Kata laluan disahkan. Selamat datang ke Portal SUP.", "success");
+        switchTab('admin');
+      } else {
+        errorMsg.textContent = "Kata laluan tidak sah! Sila cuba lagi.";
+        errorMsg.classList.remove('hidden');
+        input.select();
+      }
+    }
+
+    function lockSupPortal() {
+      isSupAuthenticated = false;
+      const icon = document.getElementById('supLockIcon');
+      if (icon) {
+        icon.className = "fa-solid fa-lock text-amber-400";
+      }
+      switchTab('form');
+      showToast("Portal SUP telah dikunci semula.", "info");
+    }
+
+    // Change Password Logic
+    function openChangePasswordModal() {
+      document.getElementById('currentPasswordInput').value = "";
+      document.getElementById('newPasswordInput').value = "";
+      document.getElementById('changePassErrorMsg').classList.add('hidden');
+      document.getElementById('changePasswordModal').classList.remove('hidden');
+    }
+
+    function closeChangePasswordModal() {
+      document.getElementById('changePasswordModal').classList.add('hidden');
+    }
+
+    function handleChangePasswordSubmit(e) {
+      e.preventDefault();
+      const currentInput = document.getElementById('currentPasswordInput').value;
+      const newInput = document.getElementById('newPasswordInput').value;
+      const errorMsg = document.getElementById('changePassErrorMsg');
+
+      if (currentInput !== currentSupPassword) {
+        errorMsg.textContent = "Kata laluan semasa tidak tepat!";
+        errorMsg.classList.remove('hidden');
+        return;
+      }
+
+      if (newInput.length < 4) {
+        errorMsg.textContent = "Kata laluan baharu mestilah sekurang-kurangnya 4 aksara.";
+        errorMsg.classList.remove('hidden');
+        return;
+      }
+
+      currentSupPassword = newInput;
+      localStorage.setItem(PASS_STORE_KEY, newInput);
+      closeChangePasswordModal();
+      showToast("Kata laluan SUP berjaya dikemaskini!", "success");
+    }
+
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'fa-regular fa-eye-slash';
+      } else {
+        input.type = 'password';
+        icon.className = 'fa-regular fa-eye';
+      }
+    }
+
+    // Tab Switching
+    function switchTab(tab) {
+      const formSection = document.getElementById('formSection');
+      const adminSection = document.getElementById('adminSection');
+      const navFormBtn = document.getElementById('navFormBtn');
+      const navAdminBtn = document.getElementById('navAdminBtn');
+
+      if (tab === 'form') {
+        formSection.classList.remove('hidden');
+        adminSection.classList.add('hidden');
+        navFormBtn.className = "px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-500 text-slate-950 shadow-md transition flex items-center gap-2";
+        navAdminBtn.className = "px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition flex items-center gap-2";
+      } else {
+        if (!isSupAuthenticated) {
+          openPasswordModal();
+          return;
+        }
+        formSection.classList.add('hidden');
+        adminSection.classList.remove('hidden');
+        navAdminBtn.className = "px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-500 text-slate-950 shadow-md transition flex items-center gap-2";
+        navFormBtn.className = "px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition flex items-center gap-2";
+        renderTable();
+      }
+    }
+
+    // Handle File Selection Preview
+    function handleFileSelected(input) {
+      const fileInfoBox = document.getElementById('fileInfoBox');
+      const fileNameText = document.getElementById('fileNameText');
+      const fileSizeText = document.getElementById('fileSizeText');
+
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        
+        // 5MB limit check
+        if (file.size > 5 * 1024 * 1024) {
+          showToast("Saiz fail melebihi 5MB. Sila pilih fail lebih kecil.", "error");
+          input.value = "";
+          fileInfoBox.classList.add('hidden');
+          selectedFileBase64 = null;
+          return;
+        }
+
+        fileNameText.textContent = file.name;
+        fileSizeText.textContent = `(${(file.size / (1024 * 1024)).toFixed(2)} MB)`;
+        fileInfoBox.classList.remove('hidden');
+
+        // Baca fail kepada Base64 supaya boleh dihantar ke Google Drive
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const result = e.target.result;
+          const base64Parts = result.split(',');
+          selectedFileBase64 = base64Parts.length > 1 ? base64Parts[1] : base64Parts[0];
+          selectedFileType = file.type || "application/pdf";
+        };
+        reader.readAsDataURL(file);
+      } else {
+        fileInfoBox.classList.add('hidden');
+        selectedFileBase64 = null;
+      }
+    }
+
+    // Helper untuk memastikan Base64 fail siap dibaca sebelum dihantar
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        if (!file) return resolve({ base64: null, type: "" });
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const parts = e.target.result.split(',');
+          resolve({
+            base64: parts.length > 1 ? parts[1] : parts[0],
+            type: file.type || "application/pdf"
+          });
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Handle Form Submit
+    async function handleSubmitForm(e) {
+      e.preventDefault();
+      const form = document.getElementById('visitationForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const originalBtnHtml = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan dokumen...`;
+
+      const nextNum = (window.applications.length + 1).toString().padStart(4, '0');
+      const year = new Date().getFullYear();
+      const refNo = `KH-${year}-${nextNum}`;
+      
+      const fileInput = document.getElementById('letterFile');
+      const fileObj = fileInput.files[0];
+      const fileName = fileObj ? fileObj.name : "Surat_Permohonan.pdf";
+
+      // Pastikan Base64 selesai diproses sebelum submit
+      let fileData = { base64: selectedFileBase64, type: selectedFileType };
+      if (fileObj && !fileData.base64) {
+        try {
+          fileData = await readFileAsBase64(fileObj);
+        } catch (err) {
+          console.warn("Gagal membaca fail:", err);
+        }
+      }
+
+      const formData = {
+        id: refNo,
+        referenceNo: refNo,
+        timestamp: new Date().toLocaleString("ms-MY"),
+        companyName: document.getElementById('companyName').value.trim(),
+        representativeName: document.getElementById('representativeName').value.trim(),
+        representativeDesignation: document.getElementById('representativeDesignation').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        proposedDate: document.getElementById('proposedDate').value,
+        proposedTime: document.getElementById('proposedTime').value,
+        delegateCount: document.getElementById('delegateCount').value,
+        purpose: document.getElementById('purpose').value.trim(),
+        fileName: fileName,
+        fileBase64: fileData.base64,
+        fileType: fileData.type,
+        fileBlobUrl: fileObj ? URL.createObjectURL(fileObj) : null,
+        fileDriveUrl: "",
+        status: "Baharu"
+      };
+
+      // 1. Simpan ke storan tetap (Kekal walaupun tutup pelayar)
+      window.applications.unshift(formData);
+      persistRecords(window.applications);
+      renderTable();
+      updateStats();
+
+      // 2. Simpan ke Cloud jika ada sambungan
+      if (typeof window.saveApplicationToCloud === 'function') {
+        try {
+          const cloudId = await window.saveApplicationToCloud(formData);
+          if (cloudId) {
+            formData.firestoreId = cloudId;
+            persistRecords(window.applications);
+          }
+        } catch (err) {
+          console.warn("Cloud save error:", err);
+        }
+      }
+
+      // 3. Hantar ke Google Sheets & Google Drive
+      if (configuredGoogleScriptUrl) {
+        try {
+          await fetch(configuredGoogleScriptUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              referenceNo: formData.referenceNo,
+              companyName: formData.companyName,
+              representativeName: formData.representativeName,
+              representativeDesignation: formData.representativeDesignation,
+              phone: formData.phone,
+              email: formData.email,
+              proposedDate: formData.proposedDate,
+              proposedTime: formData.proposedTime,
+              delegateCount: formData.delegateCount,
+              purpose: formData.purpose,
+              fileName: formData.fileName,
+              fileBase64: formData.fileBase64,
+              fileType: formData.fileType
+            })
+          });
+        } catch (err) {
+          console.warn("Google Sheets background sync failed:", err);
+        }
+      }
+
+      // Reset form
+      form.reset();
+      selectedFileBase64 = null;
+      document.getElementById('fileInfoBox').classList.add('hidden');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
+
+      // Open Success Modal
+      document.getElementById('modalRefNo').textContent = formData.id;
+      document.getElementById('modalCompany').textContent = formData.companyName;
+      document.getElementById('modalDate').textContent = `${formData.proposedDate} (${formData.proposedTime})`;
+      document.getElementById('successModal').classList.remove('hidden');
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('successModal').classList.add('hidden');
+    }
+
+    // Render Table in Admin SUP portal
+    function renderTable(dataToRender = window.applications) {
+      const tbody = document.getElementById('applicationTableBody');
+      const emptyState = document.getElementById('emptyTableState');
+
+      tbody.innerHTML = "";
+
+      if (!dataToRender || dataToRender.length === 0) {
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      dataToRender.forEach((item) => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-50 transition border-b border-slate-200";
+
+        // Status badge color
+        let statusBadge = "";
+        if (item.status === "Baharu") {
+          statusBadge = `<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300"><i class="fa-regular fa-clock mr-1"></i>Baharu</span>`;
+        } else if (item.status === "Dalam Tindakan") {
+          statusBadge = `<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-300"><i class="fa-solid fa-spinner fa-spin mr-1"></i>Dalam Tindakan</span>`;
+        } else if (item.status === "Lulus") {
+          statusBadge = `<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300"><i class="fa-regular fa-circle-check mr-1"></i>Disahkan</span>`;
+        } else {
+          statusBadge = `<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800 border border-rose-300"><i class="fa-regular fa-circle-xmark mr-1"></i>Ditolak</span>`;
+        }
+
+        tr.innerHTML = `
+          <td class="py-3 px-4 whitespace-nowrap">
+            <span class="font-mono font-bold text-rose-700 block">${item.id}</span>
+            <span class="text-[11px] text-slate-400">${item.timestamp}</span>
+          </td>
+          <td class="py-3 px-4">
+            <p class="font-bold text-slate-900">${escapeHtml(item.companyName)}</p>
+            <p class="text-[11px] text-slate-500">${escapeHtml(item.representativeName)} (${escapeHtml(item.representativeDesignation)})</p>
+          </td>
+          <td class="py-3 px-4 whitespace-nowrap">
+            <p class="text-slate-700"><i class="fa-solid fa-phone text-[10px] text-slate-400 mr-1"></i> ${escapeHtml(item.phone)}</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-envelope text-[10px] text-slate-400 mr-1"></i> ${escapeHtml(item.email)}</p>
+          </td>
+          <td class="py-3 px-4 whitespace-nowrap">
+            <span class="font-semibold text-slate-800 bg-slate-100 px-2 py-1 rounded">${item.proposedDate}</span>
+            <span class="block text-[11px] text-rose-700 font-semibold mt-1"><i class="fa-regular fa-clock mr-1"></i>${item.proposedTime || "-"}</span>
+          </td>
+          <td class="py-3 px-4">
+            <button onclick="openAttachedDocument('${item.id}')" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-rose-50 text-rose-700 hover:bg-rose-100 font-semibold text-[11px] border border-rose-200 shadow-sm transition">
+              <i class="fa-solid fa-file-pdf text-rose-600"></i> Buka Surat
+            </button>
+          </td>
+          <td class="py-3 px-4 whitespace-nowrap">
+            ${statusBadge}
+          </td>
+          <td class="py-3 px-4 whitespace-nowrap text-center">
+            <div class="inline-flex items-center gap-1">
+              <button onclick="viewDetails('${item.id}')" title="Lihat Butiran" class="p-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-200 rounded">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+              <select onchange="updateApplicationStatus('${item.id}', this.value)" class="text-[11px] py-1 px-1.5 rounded border border-slate-300 bg-white">
+                <option value="Baharu" ${item.status === 'Baharu' ? 'selected' : ''}>Baharu</option>
+                <option value="Dalam Tindakan" ${item.status === 'Dalam Tindakan' ? 'selected' : ''}>Tindakan</option>
+                <option value="Lulus" ${item.status === 'Lulus' ? 'selected' : ''}>Lulus</option>
+                <option value="Ditolak" ${item.status === 'Ditolak' ? 'selected' : ''}>Tolak</option>
+              </select>
+              <button onclick="promptDeleteApplication('${item.id}')" title="Padam Rekod" class="p-1.5 text-rose-600 hover:text-rose-800 hover:bg-rose-100 rounded transition ml-1">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Update Statistics
+    function updateStats() {
+      const list = window.applications || [];
+      document.getElementById('statTotal').textContent = list.length;
+      document.getElementById('statPending').textContent = list.filter(a => a.status === 'Baharu' || a.status === 'Dalam Tindakan').length;
+      document.getElementById('statApproved').textContent = list.filter(a => a.status === 'Lulus').length;
+      document.getElementById('statRejected').textContent = list.filter(a => a.status === 'Ditolak').length;
+      
+      const badgeCount = document.getElementById('badgeCount');
+      if (list.length > 0) {
+        badgeCount.textContent = list.length;
+        badgeCount.classList.remove('hidden');
+      } else {
+        badgeCount.classList.add('hidden');
+      }
+    }
+
+    // Filter table by Search or Status
+    function filterTable() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const status = document.getElementById('statusFilter').value;
+
+      const filtered = (window.applications || []).filter(item => {
+        const matchQuery = 
+          item.companyName.toLowerCase().includes(q) ||
+          item.representativeName.toLowerCase().includes(q) ||
+          item.phone.toLowerCase().includes(q) ||
+          item.id.toLowerCase().includes(q);
+
+        const matchStatus = (status === 'ALL') || (item.status === status);
+        return matchQuery && matchStatus;
+      });
+
+      renderTable(filtered);
+    }
+
+    // Change Status
+    function updateApplicationStatus(id, newStatus) {
+      const item = (window.applications || []).find(a => a.id === id);
+      if (item) {
+        item.status = newStatus;
+        persistRecords(window.applications); // Kekalkan status baru
+        if (item.firestoreId && typeof window.updateApplicationStatusInCloud === 'function') {
+          window.updateApplicationStatusInCloud(item.firestoreId, newStatus);
+        }
+        updateStats();
+        filterTable();
+        showToast(`Status ${id} dikemaskini kepada: ${newStatus}`, "success");
+      }
+    }
+
+    // View Details Modal
+    function viewDetails(id) {
+      const item = (window.applications || []).find(a => a.id === id);
+      if (!item) return;
+
+      const content = document.getElementById('detailModalContent');
+      content.innerHTML = `
+        <div class="grid grid-cols-2 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">No. Rujukan</span>
+            <span class="font-mono font-bold text-rose-700">${item.id}</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">Tarikh Diterima</span>
+            <span class="font-semibold text-slate-700">${item.timestamp}</span>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">Syarikat / Agensi</span>
+            <p class="font-bold text-slate-800 text-sm">${escapeHtml(item.companyName)}</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Nama Pegawai & Jawatan</span>
+              <p class="font-medium text-slate-700">${escapeHtml(item.representativeName)}</p>
+              <p class="text-slate-500">${escapeHtml(item.representativeDesignation)}</p>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Bilangan Delegasi</span>
+              <p class="font-medium text-slate-700">${item.delegateCount} Orang</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">No. Telefon</span>
+              <p class="font-medium text-slate-700"><a href="tel:${item.phone}" class="text-rose-700 hover:underline">${escapeHtml(item.phone)}</a></p>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-bold">Emel</span>
+              <p class="font-medium text-slate-700">${escapeHtml(item.email)}</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 bg-amber-50/60 p-2.5 rounded-lg border border-amber-200">
+            <div>
+              <span class="text-amber-800 block text-[10px] uppercase font-bold">Cadangan Tarikh</span>
+              <p class="font-bold text-slate-800">${item.proposedDate}</p>
+            </div>
+            <div>
+              <span class="text-amber-800 block text-[10px] uppercase font-bold">Cadangan Masa</span>
+              <p class="font-semibold text-rose-700"><i class="fa-regular fa-clock mr-1"></i>${item.proposedTime || "-"}</p>
+            </div>
+          </div>
+
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">Tujuan / Agenda Kunjungan</span>
+            <p class="p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-slate-700 leading-relaxed">${escapeHtml(item.purpose)}</p>
+          </div>
+
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">Lampiran Dokumen Surat</span>
+            <div class="mt-1 flex items-center justify-between p-3 bg-slate-100 rounded-xl border border-slate-200">
+              <span class="font-medium text-slate-700 flex items-center gap-2 truncate max-w-[280px]">
+                <i class="fa-solid fa-file-pdf text-rose-600 text-base"></i> ${escapeHtml(item.fileName)}
+              </span>
+              <button onclick="openAttachedDocument('${item.id}')" class="px-3 py-1.5 bg-rose-700 hover:bg-rose-800 text-white rounded-lg text-xs font-semibold shadow-sm transition flex items-center gap-1.5">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka / Muat Turun
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('detailModal').classList.remove('hidden');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detailModal').classList.add('hidden');
+    }
+
+    // Modal Padam (Delete) Handlers
+    function promptDeleteApplication(id) {
+      const item = (window.applications || []).find(a => a.id === id);
+      if (!item) return;
+
+      itemToDeleteId = id;
+      document.getElementById('deleteTargetRef').textContent = item.id;
+      document.getElementById('deleteTargetCompany').textContent = `"${item.companyName}"`;
+      document.getElementById('deleteConfirmModal').classList.remove('hidden');
+    }
+
+    function closeDeleteConfirmModal() {
+      itemToDeleteId = null;
+      document.getElementById('deleteConfirmModal').classList.add('hidden');
+    }
+
+    async function confirmDeleteApplication() {
+      if (!itemToDeleteId) return;
+
+      const targetId = itemToDeleteId;
+      const index = (window.applications || []).findIndex(a => a.id === targetId);
+
+      if (index !== -1) {
+        const item = window.applications[index];
+
+        // Padam dari pangkalan data awan jika ada
+        if (item.firestoreId && typeof window.deleteApplicationFromCloud === 'function') {
+          try {
+            await window.deleteApplicationFromCloud(item.firestoreId);
+          } catch (e) {
+            console.warn("Ralat memadam di cloud:", e);
+          }
+        }
+
+        // Padam dari senarai memori & kemaskini storan tempatan
+        window.applications.splice(index, 1);
+        persistRecords(window.applications);
+
+        renderTable();
+        updateStats();
+        showToast(`Permohonan ${targetId} berjaya dipadam.`, "success");
+      }
+
+      closeDeleteConfirmModal();
+    }
+
+    // Fungsi membuka surat sebenar
+    function openAttachedDocument(id) {
+      const item = (window.applications || []).find(a => a.id === id);
+      if (!item) return;
+
+      if (item.fileBlobUrl) {
+        // Buka tab baharu dengan fail yang baru dimuat naik
+        window.open(item.fileBlobUrl, '_blank');
+        showToast("Membuka fail surat pemohon...", "success");
+      } else if (item.fileBase64) {
+        const byteCharacters = atob(item.fileBase64);
+        const byteNumbers = new Array(byteCharacters.length);
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNumbers);
+        const blob = new Blob([byteArray], { type: item.fileType || "application/pdf" });
+        const blobUrl = URL.createObjectURL(blob);
+        window.open(blobUrl, '_blank');
+        showToast("Membuka dokumen surat...", "success");
+      } else {
+        showToast(`Ini adalah rekod contoh: ${item.fileName}. Sila semak folder Google Drive anda untuk permohonan terkini.`, "info");
+      }
+    }
+
+    // Export to Excel / CSV
+    function exportToCSV() {
+      const list = window.applications || [];
+      if (list.length === 0) {
+        showToast("Tiada data permohonan untuk dimuat turun.", "error");
+        return;
+      }
+
+      const headers = ["No Rujukan", "Tarikh Masa Diterima", "Nama Syarikat", "Nama Wakil", "Jawatan", "Telefon", "Emel", "Cadangan Tarikh", "Cadangan Masa", "Bil Delegasi", "Tujuan", "Nama Surat", "Status"];
+      
+      const rows = list.map(item => [
+        `"${item.id}"`,
+        `"${item.timestamp}"`,
+        `"${item.companyName.replace(/"/g, '""')}"`,
+        `"${item.representativeName.replace(/"/g, '""')}"`,
+        `"${item.representativeDesignation.replace(/"/g, '""')}"`,
+        `"${item.phone}"`,
+        `"${item.email}"`,
+        `"${item.proposedDate}"`,
+        `"${item.proposedTime || "-"}"`,
+        `"${item.delegateCount}"`,
+        `"${item.purpose.replace(/"/g, '""')}"`,
+        `"${item.fileName}"`,
+        `"${item.status}"`
+      ]);
+
+      const csvContent = "data:text/csv;charset=utf-8,\uFEFF" 
+        + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `Kunjung_Hormat_YAS_Datuk_Nazili_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast("Fail Excel (CSV) berjaya dimuat turun!", "success");
+    }
+
+    // Google Sheets Setup Modal
+    function openSetupModal() {
+      document.getElementById('setupModal').classList.remove('hidden');
+    }
+
+    function closeSetupModal() {
+      document.getElementById('setupModal').classList.add('hidden');
+    }
+
+    function saveScriptUrl() {
+      const url = document.getElementById('scriptUrlInput').value.trim();
+      if (!url.startsWith('https://script.google.com/')) {
+        showToast("Sila masukkan URL Google Apps Script yang sah (bermula dengan https://script.google.com/).", "error");
+        return;
+      }
+      configuredGoogleScriptUrl = url;
+      localStorage.setItem(SCRIPT_URL_KEY, url);
+      window.__googleSheetUrl = url;
+      updateConnectionBanner(true);
+      showToast("URL Google Apps Script berjaya disimpan secara kekal!", "success");
+      closeSetupModal();
+    }
+
+    // Fungsi Sync Semua Data Sedia Ada ke Google Sheets
+    async function syncAllToGoogleSheets() {
+      if (!configuredGoogleScriptUrl) {
+        showToast("Sila masukkan URL Webhook di bahagian 'Setup Google Excel' terlebih dahulu.", "error");
+        openSetupModal();
+        return;
+      }
+
+      const list = window.applications || [];
+      if (list.length === 0) {
+        showToast("Tiada data untuk diselaraskan.", "info");
+        return;
+      }
+
+      showToast(`Menghantar ${list.length} rekod ke Google Sheets...`, "info");
+
+      let count = 0;
+      for (const item of list) {
+        try {
+          await fetch(configuredGoogleScriptUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              referenceNo: item.id || item.referenceNo,
+              companyName: item.companyName,
+              representativeName: item.representativeName,
+              representativeDesignation: item.representativeDesignation,
+              phone: item.phone,
+              email: item.email,
+              proposedDate: item.proposedDate,
+              proposedTime: item.proposedTime,
+              delegateCount: item.delegateCount,
+              purpose: item.purpose,
+              fileName: item.fileName,
+              fileBase64: item.fileBase64 || null,
+              fileType: item.fileType || "application/pdf"
+            })
+          });
+          count++;
+        } catch (e) {
+          console.warn("Ralat sync item:", item.id, e);
+        }
+      }
+
+      showToast(`Berjaya! Sebanyak ${count} rekod telah dipindahkan ke Google Sheets anda.`, "success");
+    }
+
+    function copyScriptCode() {
+      const codeText = `function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    
+    // 1. Simpan fail ke Google Drive jika ada data fail
+    var fileUrl = "-";
+    var hyperlinkFormula = "-";
+    
+    if (data.fileBase64 && data.fileName) {
+      var folderName = "Surat Permohonan Kunjung Hormat TKP";
+      var folders = DriveApp.getFoldersByName(folderName);
+      var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(folderName);
+      
+      var decoded = Utilities.base64Decode(data.fileBase64);
+      var blob = Utilities.newBlob(decoded, data.fileType || "application/pdf", data.fileName);
+      var file = folder.createFile(blob);
+      file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+      fileUrl = file.getUrl();
+      hyperlinkFormula = '=HYPERLINK("' + fileUrl + '", "📄 Buka Surat PDF")';
+    }
+    
+    // 2. Jika baris pertama kosong, tambah tajuk lajur
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        "Timestamp", "No Rujukan", "Nama Syarikat", 
+        "Nama Wakil", "Jawatan Wakil", "No Telefon", 
+        "Emel", "Cadangan Tarikh", "Cadangan Masa", 
+        "Bil Delegasi", "Tujuan Kunjungan", "Nama Fail Surat", "Pautan Google Drive (Surat)", "Status"
+      ]);
+    }
+    
+    // 3. Tambah data permohonan baharu
+    sheet.appendRow([
+      new Date().toLocaleString("ms-MY"),
+      data.referenceNo,
+      data.companyName,
+      data.representativeName,
+      data.representativeDesignation,
+      data.phone,
+      data.email,
+      data.proposedDate,
+      data.proposedTime,
+      data.delegateCount,
+      data.purpose,
+      data.fileName,
+      hyperlinkFormula !== "-" ? hyperlinkFormula : fileUrl,
+      "Baharu"
+    ]);
+    
+    return ContentService.createTextOutput(JSON.stringify({status: "success", fileUrl: fileUrl}))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({status: "error", message: err.toString()}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}`;
+
+      const tempTextArea = document.createElement("textarea");
+      tempTextArea.value = codeText;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy');
+        showToast("Kod Google Apps Script disalin ke papan klip!", "success");
+      } catch (err) {
+        showToast("Gagal menyalin, sila salin secara manual.", "error");
+      }
+      document.body.removeChild(tempTextArea);
+    }
+
+    // Utility: Show Toast notification
+    function showToast(message, type = "info") {
+      const toast = document.getElementById('toastMessage');
+      const text = document.getElementById('toastText');
+      const icon = document.getElementById('toastIcon');
+
+      text.textContent = message;
+      if (type === "success") {
+        icon.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400"></i>';
+      } else if (type === "error") {
+        icon.innerHTML = '<i class="fa-solid fa-circle-exclamation text-rose-400"></i>';
+      } else {
+        icon.innerHTML = '<i class="fa-solid fa-circle-info text-amber-400"></i>';
+      }
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
